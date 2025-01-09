@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<nav class="navbar">
+    <h2 class="navbar-title">Shift Controller</h2>
+    
+    <div class="navbar-btn_container">
+        <button class="btn btn-primary" *ngIf="loggedIn" (click)="this.userService.goToSchedule()">Schedules</button>
+        <button class="btn btn-primary" *ngIf="loggedIn && this.userService.isAdmin()" (click)="this.userService.goToJobs()">Jobs</button>
+        <button class="btn btn-primary" *ngIf="loggedIn" (click)="this.userService.goToWorker()">Worker Dashboard</button>
+        <button class="btn btn-primary" *ngIf="loggedIn && this.userService.isAdmin()" (click)="this.userService.goToAdmin()">Admin Dashboard</button>
+
+        <button *ngIf="loggedIn" (click)="logOut()" class="btn btn-danger">Log Out</button>
+    </div>
+</nav>
