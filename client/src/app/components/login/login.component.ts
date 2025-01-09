@@ -76,11 +76,11 @@ export class LoginComponent implements OnInit{
   }
 
   showSuccessWorker(){
-    this.toastr.success("Logged in as a worker","Success");
+    this.toastr.info("Logged in as a <b>worker</b>","Success",{enableHtml:true});
   }
 
   showSuccessAdmin(){
-    this.toastr.success("Logged in as an admin","Success");
+    this.toastr.info("Logged in as an <b>admin</b>","Success",{enableHtml:true});
   }
 
   showFailure(){

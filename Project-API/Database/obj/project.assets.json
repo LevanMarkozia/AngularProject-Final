@@ -5882,11 +5882,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IBSU\\Desktop\\adkfjlkc\\AngularProject-Secondary\\Project-API\\Database\\Database.csproj",
+      "projectUniqueName": "C:\\Users\\IBSU\\Desktop\\LevanMarkoziaAngularProject\\AngularProject-Final\\Project-API\\Database\\Database.csproj",
       "projectName": "Database",
-      "projectPath": "C:\\Users\\IBSU\\Desktop\\adkfjlkc\\AngularProject-Secondary\\Project-API\\Database\\Database.csproj",
+      "projectPath": "C:\\Users\\IBSU\\Desktop\\LevanMarkoziaAngularProject\\AngularProject-Final\\Project-API\\Database\\Database.csproj",
       "packagesPath": "C:\\Users\\IBSU\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IBSU\\Desktop\\adkfjlkc\\AngularProject-Secondary\\Project-API\\Database\\obj\\",
+      "outputPath": "C:\\Users\\IBSU\\Desktop\\LevanMarkoziaAngularProject\\AngularProject-Final\\Project-API\\Database\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\IBSU\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -5901,8 +5901,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\IBSU\\Desktop\\adkfjlkc\\AngularProject-Secondary\\Project-API\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\IBSU\\Desktop\\adkfjlkc\\AngularProject-Secondary\\Project-API\\Business\\Business.csproj"
+            "C:\\Users\\IBSU\\Desktop\\LevanMarkoziaAngularProject\\AngularProject-Final\\Project-API\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\IBSU\\Desktop\\LevanMarkoziaAngularProject\\AngularProject-Final\\Project-API\\Business\\Business.csproj"
             }
           }
         }
