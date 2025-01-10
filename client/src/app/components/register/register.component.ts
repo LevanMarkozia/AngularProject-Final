@@ -79,4 +79,8 @@ export class RegisterComponent {
   showFailure(){
     this.toastr.error("Failed to register","Warning");
   }
+
+  goToLogin(){
+    this.router.navigate(['/login']);
+  }
 }
