@@ -1,28 +1,37 @@
-<app-navbar></app-navbar>
-<div class="container">
-  <form class="form" [formGroup]="loginForm" (ngSubmit)="Login()">
-    <p class="title"> {{ 'LOGIN' | translate }} </p>
-    <p class="message"> {{ 'LOGIN_MESSAGE' | translate }} </p>
+<div class="body">
+  <div class="form-container" [formGroup]="loginForm" (ngSubmit)="Login()">
 
-    <label for="email">
-      <input class="input" type="text" id="email" formControlName="email" placeholder="{{'EMAIL' | translate}}" required>
-      <span> {{'EMAIL' | translate}} </span>
-    </label>
-    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-      <p *ngIf="loginForm.get('email')?.errors?.['required']"> Email is required. </p>
-      <p *ngIf="loginForm.get('email')?.errors?.['email']"> Enter a valid email. </p>
+    <h1>Login</h1>
+
+    <form>
+      <div class="input-container">
+        <div class="error-div" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <p *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</p>
+          <p *ngIf="loginForm.get('email')?.errors?.['email']">Enter a valid email</p>
+        </div>
+
+        <input placeholder="Email" type="email" id="email" formControlName="email" required>
+        <img class="input-icon" src="../../../assets/icons/email.svg" />
+      </div>
+
+      <div class="input-container">
+        <div class="error-div" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <p *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</p>
+          <p *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</p>
+        </div>
+        
+        <input placeholder="Password" type="password" id="password" formControlName="password" required>
+        <img class="input-icon" src="../../../assets/icons/lock.svg" />
+      </div>
+
+      
+      <button type="submit">Login</button>
+    </form>
+
+    <div>
+      <p>Don't have an account? <a (click)="goToRegister()">Register</a></p>
+      <p>Change language</p>
     </div>
 
-    <label for="password">
-      <input class="input" type="password" id="password" formControlName="password" placeholder="{{ 'PASSWORD' | translate }}" required>
-      <span> {{'PASSWORD' | translate}} </span>
-    </label>
-    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-      <p *ngIf="loginForm.get('password')?.errors?.['required']"> Password is required. </p>
-      <p *ngIf="loginForm.get('password')?.errors?.['minlength']"> Password must be at least 6 characters long. </p>
-    </div>
-
-    <button class="submit" type="submit"> {{ 'LOGIN' | translate }} </button>
-    <button class="submit" type="button" (click)="goToRegister()"> {{ 'REGISTER' | translate }} </button>
-  </form>
+  </div>
 </div>
