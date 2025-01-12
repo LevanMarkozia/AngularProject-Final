@@ -1,91 +1,76 @@
-<!-- <p>register works!</p>
-<button (click)="fetchJobOptions()">fetch job options</button>
+<div class="body">
+  <div class="body-secondary">
+      <div class="form-container">
+        <h1>Create an Account</h1>
+        <p>Already a member? <a href="login" (click)="goToLogin()">Log In</a></p>
 
-<form [formGroup]="registrationForm" (ngSubmit)="Register" class="text-center">
-    <label for="firstName">FirstName</label>
-    <input type="text" id="firstName" formControlName="firstName" placeholder="First Name">
-<br>
-    <label for="lastName">LastName</label>
-    <input type="text" id="lastName" formControlName="lastName" placeholder="Last Name">
-<br>
-    <label for="email">Email</label>
-    <input type="text" id="email" formControlName="email" placeholder="Email">
-<br>
-    <label for="password">Password</label>
-    <input type="password" id="password" formControlName="password" placeholder="Password">
-<br>
-    <label for="confirmPassword">Confirm Password</label>
-    <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password">
-<br>
-    <label for="job">Job</label>
-    <select  id="jobId" formControlName="jobId">
-       
-        <option *ngFor="let job of jobOptions" [ngValue]="job">{{job.title}}</option>
-    </select>
+        <form [formGroup]="registrationForm" (ngSubmit)="Register()">
+          <div>
+            <label>
+              <input type="text" id="firstName" formControlName="firstName" required>
+              <span>First Name</span>
+              
+              <div *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched">
+                <p *ngIf="registrationForm.get('firstName')?.errors?.['required']" class="text-danger">First name is required</p>
+              </div>
+            </label>
 
-    <button (click)="Register()">register</button>
-</form>
- -->
+            <label>
+              <input type="text" id="lastName" formControlName="lastName" required>
+              <span>Last Name</span>
 
-<!-- ---------------------------------------------------------------------------- -->
-<div class="container">
-  <form class="form" [formGroup]="registrationForm" (ngSubmit)="Register()">
-    <p class="title"> {{'REGISTER' | translate}} </p>
-    <p class="message"> {{'SIGNUP_MESSAGE' | translate }} </p>
-  
-    <div class="flex">  
-        <label for="firstName">
-            <input class="input" type="text" id="firstName" formControlName="firstName" required>
-            <span> {{'FIRST_NAME' | translate}} </span>
-          </label>
-          <div *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched">
-            <p *ngIf="registrationForm.get('firstName')?.errors?.['required']"> First name is required. </p>
+              <div *ngIf="registrationForm.get('lastName')?.invalid && registrationForm.get('lastName')?.touched">
+                <p *ngIf="registrationForm.get('lastName')?.errors?.['required']" class="text-danger">Last name is required</p>
+              </div>
+            </label>
           </div>
-  
-      <label for="lastName">
-        <input class="input" type="text" id="lastName" formControlName="lastName" required>
-        <span> {{'LAST_NAME' | translate}} </span>
-      </label>
-      <div *ngIf="registrationForm.get('lastName')?.invalid && registrationForm.get('lastName')?.touched">
-        <p *ngIf="registrationForm.get('lastName')?.errors?.['required']"> Last name is required. </p>
+
+          <label>
+            <input type="text" id="email" formControlName="email" required>
+            <span>Email</span>
+
+            <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+              <p *ngIf="registrationForm.get('email')?.errors?.['required']" class="text-danger"> Email is required</p>
+              <p *ngIf="registrationForm.get('email')?.errors?.['email']" class="text-danger">Enter a valid email</p>
+            </div>
+          </label>
+
+          <label>
+            <input type="password" id="password" formControlName="password" required>
+            <span>Password</span>
+            
+            <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+              <p *ngIf="registrationForm.get('password')?.errors?.['required']" class="text-danger">Password is required</p>
+              <p *ngIf="registrationForm.get('password')?.errors?.['minlength']" class="text-danger">Password must be at least 6 characters long</p>
+            </div>
+          </label>
+
+          <label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" required>
+            <span>Confirm Password</span>
+
+            <div *ngIf="registrationForm.errors?.['passwordMismatch'] && registrationForm.get('confirmPassword')?.touched">
+              <p class="text-danger">Passwords dont match</p>
+            </div>
+          </label>
+
+          <select *appUnless="jobOptions.length==0" class="button" id="jobId" formControlName="jobId" required>
+            <option [ngValue]="null" disabled>Select a job...</option>
+            <option *ngFor="let job of jobOptions" [ngValue]="job">{{job.title}}</option>
+          </select>
+          <div *ngIf="registrationForm.get('jobId')?.invalid && registrationForm.get('jobId')?.touched">
+            <p class="text-danger">Please select a job</p>
+          </div>
+          <div *ngIf="jobOptions.length == 0">
+            <p>Error loading jobs</p>
+          </div>
+
+          <button type="submit">Create Account</button>
+        </form>
       </div>
-    </div>
-  
-    <label for="email">
-      <input class="input" type="text" id="email" formControlName="email" required>
-      <span> {{'EMAIL' | translate}} </span>
-    </label>
-    <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
-      <p *ngIf="registrationForm.get('email')?.errors?.['required']"> Email is required. </p>
-      <p *ngIf="registrationForm.get('email')?.errors?.['email']"> Enter a valid email. </p>
-    </div>
-  
-    <label for="password">
-      <input class="input" type="password" id="password" formControlName="password" required>
-      <span> {{'PASSWORD' | translate}} </span>
-    </label>
-    <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
-      <p *ngIf="registrationForm.get('password')?.errors?.['required']"> Password is required. </p>
-      <p *ngIf="registrationForm.get('password')?.errors?.['minlength']"> Password must be at least 6 characters long. </p>
-    </div>
-  
-    <label for="confirmPassword">
-      <input class="input" type="password" id="confirmPassword" formControlName="confirmPassword" required>
-      <span> {{'CONFIRM_PASSWORD' | translate}} </span>
-    </label>
-    <div *ngIf="registrationForm.errors?.['passwordMismatch'] && registrationForm.get('confirmPassword')?.touched">
-      <p> Passwords dont match. </p>
-    </div>
-  
-    <label for="job">Job</label>
-    <select *appUnless="jobOptions.length==0" class="button" id="jobId" formControlName="jobId" required>
-      <option *ngFor="let job of jobOptions" [ngValue]="job">{{job.title}}</option>
-    </select>
-    <div *ngIf="registrationForm.get('jobId')?.invalid && registrationForm.get('jobId')?.touched">
-      <p> Please select a job. </p>
-    </div>
-    <button class="submit" (click)="fetchJobOptions()"> Fetch Job Options</button>
-    <button class="submit"> Submit </button>
-    <button class="submit" (click)="this.userService.goToLogin()"> Login </button>
-  </form>
+
+      <div class="image-container">
+        <img src="../../../assets/images/background-secondary.jpg">
+      </div>
+  </div>
 </div>
