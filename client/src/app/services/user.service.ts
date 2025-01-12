@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Job } from '../interfaces/job';
 import { Schedule } from '../interfaces/schedule';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,16 @@ export class UserService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    ) { }
+    private translate: TranslateService
+    ) {
+      translate.addLangs(['en', 'de', 'fr']);
+      translate.setDefaultLang('en');
+      translate.use('en');
+    }
 
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+  }
     
   fetchJobTitles(): Observable<any>{
     return this.http.get(`${this.apiUrl}/jobs`);

@@ -8,5 +8,19 @@
     "PASSWORD": "Password",
     "CONFIRM_PASSWORD": "Confirm Password",
     "JOB": "Job",
-    "SUBMIT": "Submit"
+    "SUBMIT": "Submit",
+    "LOGIN": "Log in",
+    "LOGIN_LABEL": "Already have an account?",
+    "REGISTER_LABEL": "Don't have an account?",
+    "EMAIL_REQ": "Email is required",
+    "EMAIL_INV": "Please enter a valid email",
+    "PASSWORD_REQ": "Password is required",
+    "PASSWORD_INV": "Password must be at least 6 characters long",
+    "CREATE_ACC": "Create an account",
+    "FN_REQ": "First name is required",
+    "LN_REQ": "Last name is required",
+    "PASSWORD_MATCH": "Passwords don't match",
+    "JOB_SELECT": "Select a job",
+    "JOB_REQ": "Please select a job",
+    "JOB_ERR": "Error loading jobs"
 }

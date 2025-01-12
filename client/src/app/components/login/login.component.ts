@@ -17,23 +17,15 @@ export class LoginComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService,
+    protected userService: UserService,
     private router: Router,
     private toastr:ToastrService,
-    private translate: TranslateService
-  ){
-    translate.addLangs(['en', 'de', 'fr']);
-    translate.setDefaultLang('en');
-  }
+  ){}
 
   ngOnInit(): void {
     this.createForm();
   }
   
-  switchLanguage(lang: string) {
-    this.translate.use(lang);
-  }
-
   createForm(){
     this.loginForm = this.fb.group({
       email:['', [Validators.required, Validators.email]],

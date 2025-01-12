@@ -152,3 +152,17 @@ C:\Users\theas\OneDrive\Documents\GitHub\AngularProject-Final\Project-API\Busine
 C:\Users\theas\OneDrive\Documents\GitHub\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.pdb
 C:\Users\theas\OneDrive\Documents\GitHub\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.genruntimeconfig.cache
 C:\Users\theas\OneDrive\Documents\GitHub\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\ref\Business.dll
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\bin\Debug\net6.0\Business.deps.json
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\bin\Debug\net6.0\Business.runtimeconfig.json
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\bin\Debug\net6.0\Business.dll
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\bin\Debug\net6.0\Business.pdb
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.csproj.AssemblyReference.cache
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.AssemblyInfoInputs.cache
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.AssemblyInfo.cs
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.csproj.CoreCompileInputs.cache
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.dll
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\refint\Business.dll
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.pdb
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\Business.genruntimeconfig.cache
+F:\LevanMarkoziaAngularProject\AngularProject-Final\Project-API\Business\obj\Debug\net6.0\ref\Business.dll
