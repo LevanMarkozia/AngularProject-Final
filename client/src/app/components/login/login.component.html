@@ -1,7 +1,7 @@
 <div class="body">
   <div class="form-container" [formGroup]="loginForm" (ngSubmit)="Login()">
 
-    <h1>Login</h1>
+    <h1>{{ 'Login' | translate }}</h1>
 
     <form>
       <div class="input-container">
@@ -25,12 +25,22 @@
       </div>
 
       
-      <button type="submit">Login</button>
+      <button type="submit">{{ 'Login' | translate }}</button>
     </form>
 
     <div>
-      <p>Don't have an account? <a (click)="goToRegister()">Register</a></p>
-      <p>Change language</p>
+      <p>{{"Don't have an account?" | translate }} <a (click)="goToRegister()">{{ 'Register' | translate }}</a></p>
+      <!-- <p>Change language</p> -->
+       <!-- <select>
+          <option (click)="switchLanguage('en')">English</option>
+          <option (click)="switchLanguage('de')">German</option>
+          <option (click)="switchLanguage('de')">French</option>
+       </select> -->
+
+       
+    <button (click)="switchLanguage('en')">English</button>
+    <button (click)="switchLanguage('de')">German</button>
+    <button (click)="switchLanguage('fr')">French</button>
     </div>
 
   </div>

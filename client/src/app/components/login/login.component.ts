@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 
@@ -18,10 +19,19 @@ export class LoginComponent implements OnInit{
     private fb: FormBuilder,
     private userService: UserService,
     private router: Router,
-    private toastr:ToastrService
-  ){}
+    private toastr:ToastrService,
+    private translate: TranslateService
+  ){
+    translate.addLangs(['en', 'de', 'fr']);
+    translate.setDefaultLang('en');
+  }
+
   ngOnInit(): void {
     this.createForm();
+  }
+  
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
   }
 
   createForm(){
