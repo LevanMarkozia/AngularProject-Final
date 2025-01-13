@@ -67,10 +67,13 @@
 
           <button type="submit">{{'CREATE_ACC' | translate}}</button>
         </form>
-
-        <button (click)="this.userService.switchLanguage('en')">English</button>
-        <button (click)="this.userService.switchLanguage('de')">Deutsch</button>
-        <button (click)="this.userService.switchLanguage('fr')">Français</button>
+        
+        <br>
+        <div>
+          <button class="langbtn" (click)="this.userService.switchLanguage('en')">English</button>
+          <button class="langbtn" (click)="this.userService.switchLanguage('de')">Deutsch</button>
+          <button class="langbtn" (click)="this.userService.switchLanguage('fr')">Français</button>
+        </div>
       </div>
 
       <div class="image-container">

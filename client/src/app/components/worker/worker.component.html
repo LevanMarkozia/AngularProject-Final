@@ -1,13 +1,15 @@
 <app-navbar></app-navbar>
-<h1 class="text-center">Worker Dashboard</h1>
+<h1 class="text-center">{{'BTN_WORKER' | translate}}</h1>
+
+<button *ngIf="!this.userService.isAdmin()" class="btn btn-primary" (click)="this.userService.goToSchedule()">{{'BTN_SCHEDULE' | translate}}</button><br>
 
 <div class="container" *ngIf="this.userService.isAdmin()">
     <table class="table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Occupation</th>
-                <th>Dashboard Privileges</th>
+                <th>{{'USER_NAME' | translate}}</th>
+                <th>{{'USER_OCCUPATION' | translate}}</th>
+                <th>{{'USER_ROLE' | translate}}</th>
                 <th></th>
             </tr>
         </thead>
@@ -18,11 +20,15 @@
                 <td>{{getOccupationName(user.jobId)}}</td>
                 <td>
                     {{getRoleName(user.roleId)}}
-                    <button *ngIf="user.roleId==1" class="btn btn-info" (click)="revokeAdmin(user)">Revoke admin</button>
-                    <button *ngIf="user.roleId==2" class="btn btn-info" (click)="giveAdmin(user)">Make admin</button>
+                    <button *ngIf="user.roleId==1" class="btn btn-info" (click)="revokeAdmin(user)">{{'ADMIN_REVOKE' | translate}}</button>
+                    <button *ngIf="user.roleId==2" class="btn btn-info" (click)="giveAdmin(user)">{{'ADMIN_GIVE' | translate}}</button>
                 </td>
-                <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+                <td><button class="btn btn-danger" (click)="deleteUser(user.id)">{{'DELETE' | translate}}</button></td>
             </tr>
         </tbody>
     </table>
+    <!-- <br>
+    <button (click)="this.userService.switchLanguage('en')">English</button>
+    <button (click)="this.userService.switchLanguage('de')">Deutsch</button>
+    <button (click)="this.userService.switchLanguage('fr')">Français</button> -->
 </div>
